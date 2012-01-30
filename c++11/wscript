@@ -1,0 +1,30 @@
+import os
+
+CXXFLAGS = ['-Wall','-Wextra','-ansi','-pedantic','-std=c++0x','-O2']
+
+def try_file(ctx, file_name):
+	def_name = ('HAS_' + os.path.basename(file_name).replace('.cpp', '')).upper()
+	data = ""
+	with open(file_name, "r") as f:
+		data = f.readlines()
+	ctx.check_cxx(fragment=''.join(data), define_name=def_name,
+                      msg = "checking for: " + def_name, 
+                      cxxflags='-std=c++0x', mandatory=False)
+
+def options(opt):
+	opt.load('compiler_cxx')
+
+def configure(ctx):
+	path = os.path.join(ctx.path.abspath(), 'tests')
+	ctx.load('compiler_cxx')
+	[try_file(ctx,os.path.join(path,x)) for x in os.listdir(path) if x.endswith('.cpp')]
+	ctx.write_config_header('config.h')
+	
+def build(bld):
+	path = bld.path.abspath()
+	for source in [x for x in os.listdir(path) if x.endswith('.cpp')]:
+		bld.program(
+			source = source,
+			target = source.split('.')[0],
+			cxxflags = CXXFLAGS
+		)
