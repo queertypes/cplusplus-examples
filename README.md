@@ -7,6 +7,7 @@ Currently, this repository focuses on C++11. In the future, more examples may be
 # Compilation
 
 In order to compile the examples provided, it is recommended that at least the following is installed in your system:
+
 * A c++ compiler
 * [waf](http://code.google.com/p/waf/)
 * [Python](http://python.org/)
