@@ -1,0 +1,1 @@
+../inline_namespace.cpp
