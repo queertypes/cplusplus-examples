@@ -78,15 +78,15 @@ int main()
 	Sequence<int> s = {1,2,3,4,5};
 
 	cout << "array [";
-	copy(arr, arr+5, ostream_iterator<int>(cout, ","));
+	copy(arr, arr+5, ostream_iterator<int>(cout, " "));
 	cout << "]\n";
 
 	cout << "vector [";
-	copy(begin(x), end(x), ostream_iterator<int>(cout, ","));
+	copy(begin(x), end(x), ostream_iterator<int>(cout, " "));
 	cout << "]\n";
 
 	cout << "sequence [";
-	copy(begin(s), end(s), ostream_iterator<int>(cout, ","));
+	copy(begin(s), end(s), ostream_iterator<int>(cout, " "));
 	cout << "]\n";
 
 	return 0;
