@@ -15,24 +15,30 @@
  *   You should have received a copy of the GNU General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. 
  **/
+#include <bits/move.h>
 
 struct X {
   X() = default;
   ~X() = default;
-  explicit X(const int val) : x{val} {}
-  X(const X&) = delete;
-  const X& operator=(const X&) = delete;
 
-  int x;
+  X(const X&) = delete;
+  X& operator=(const X&) = delete;
+
+  X(const X&&) = delete;
+  X& operator=(const X&&)  = delete;
 };
 
 int main()
 {
-  X a{1};
-  X b{2};
+  X x;
+  //X xx(x);
+  X xy;
 
-  // a = b; // error
-  // X c{a}; // error
+  //xy = x;
+
+  // X xm(std::move(x));
+  // X xmm;
+  // xmm = std::move(x);
 
   return 0;
 }
