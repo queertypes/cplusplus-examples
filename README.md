@@ -1,6 +1,6 @@
 # Introduction
 
-This is a collection of C++ programming examples. It is meantto serve as a tutorial to many of the features available in either the C++ core language, the C++ standard library, or even some major, open-source, external libraries.
+This is a collection of C++ programming examples. It is meant to serve as a tutorial to many of the features available in either the C++ core language, the C++ standard library, or even some major, open-source, external libraries.
 
 Currently, this repository focuses on C++11. In the future, more examples may be added.
 
