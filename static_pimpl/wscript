@@ -1,0 +1,13 @@
+CXXFLAGS = ['-Wall', '-Wextra', '-std=c++0x']
+
+def options(ctx):
+  ctx.load('compiler_cxx')
+
+def configure(ctx):
+  ctx.load('compiler_cxx')
+
+def build(bld):
+  bld.program(source='src/test.cpp',
+              includes='include',
+              target='static_pimpl',
+              cxxflags=CXXFLAGS)
