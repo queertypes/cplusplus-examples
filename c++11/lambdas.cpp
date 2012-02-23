@@ -1,6 +1,6 @@
 /**
  *   C++ Examples - a collection of C++ examples intended to serve as a tutorial
- *   Copyright (C) 2011 Alejandro Cabrera
+ *   Copyright (C) 2011-2012 Alejandro Cabrera
  *
  *   This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
