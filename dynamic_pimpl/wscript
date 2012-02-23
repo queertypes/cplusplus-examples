@@ -1,0 +1,21 @@
+import os
+
+CXXFLAGS = ['-Wall', '-Wextra', '-std=c++0x']
+
+def options(ctx):
+  ctx.load('compiler_cxx')
+
+def configure(ctx):
+  ctx.load('compiler_cxx')
+
+def build(bld):
+  bld.shlib(source=[os.path.join('include','detail',x) for x in os.listdir('include/detail')],
+            includes='include',
+            target='factorial',
+            cxxflags=CXXFLAGS)
+
+  bld.program(source='src/test.cpp',
+              includes='include',
+              use='factorial',
+              target='dynamic_pimpl',
+              cxxflags=CXXFLAGS)
