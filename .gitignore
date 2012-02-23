@@ -2,3 +2,5 @@
 a.out
 *.so*
 *.o
+build
+*.lock*
