@@ -34,17 +34,17 @@ struct Velocity {
 };
 
 namespace Physics {
-	constexpr Seconds operator"" s(long double i)
+	constexpr Seconds operator"" s(const long double i)
 	{
 		return Seconds{i};
 	}
 
-	constexpr Distance operator"" m(long double i)
+	constexpr Distance operator"" m(const long double i)
 	{
 		return Distance{i};
 	}
 
-	constexpr Velocity operator"" mps(long double i)
+	constexpr Velocity operator"" mps(const long double i)
 	{
 		return Velocity{i};
 	}

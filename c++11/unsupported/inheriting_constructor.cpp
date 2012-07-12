@@ -33,7 +33,7 @@ struct Derived : Base {
     cout << "Derived\n";
   }
   
-  using B::f;
+  using Base::f;
   void f(const int x) {
     cout << "Derived::f\n";
   }
