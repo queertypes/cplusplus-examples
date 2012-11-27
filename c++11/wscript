@@ -20,7 +20,7 @@ VERSION = 0.3
 
 import os
 
-CXXFLAGS = ['-Wall','-Wextra','-ansi','-pedantic','-std=c++0x']
+CXXFLAGS = ['-Wall', '-Wextra', '-std=c++0x']
 
 def try_file(ctx, file_name):
 	def_name = ('HAS_' + os.path.basename(file_name).replace('.cpp', '')).upper()
@@ -29,7 +29,7 @@ def try_file(ctx, file_name):
 		data = f.readlines()
 	ctx.check_cxx(fragment=''.join(data), define_name=def_name,
                       msg = "checking for: " + def_name, 
-                      cxxflags='-std=c++0x', mandatory=False)
+                      cxxflags='-std=c++0x -I' + ctx.path.abspath(), mandatory=True)
 
 def options(opt):
 	opt.load('compiler_cxx')

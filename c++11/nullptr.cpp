@@ -37,7 +37,7 @@ int main()
   if (p1 == p2)
     cout << "nullptr is equivalent to 0\n";
 
-  if (p1 == p1)
+  if (p1 == nullptr)
     cout << "nullptr is equivalent to nullptr\n";
   
   f(nullptr);
